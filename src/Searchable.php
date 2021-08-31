@@ -7,6 +7,11 @@ trait Searchable
 {
     private $elatic;
 
+    public static function bootSearchable()
+    {
+        static::observe(new ModelObserver);
+    }
+
     /**
      * 查询结果
      * @param $array
@@ -113,8 +118,15 @@ trait Searchable
 
     public function elaticDelete()
     {
-        $elatic = new LaravelElaticsearch();
+        $elatic = new Elaticsearch();
 
         return $elatic->delete($this);
+    }
+
+    public function upserts()
+    {
+        $elatic = new Elaticsearch();
+
+        return $elatic->upserts($this);
     }
 }
