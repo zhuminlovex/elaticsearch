@@ -82,7 +82,7 @@ class Elaticsearch
         $str = '';
         foreach ($model->toSearchableArray() as $key => $value){
             $data[$key] =  $model->$key ?? '';
-            $str .= 'ctx._source.' .$key .'+=' .'params.'.$key .';';
+            $str .= 'ctx._source.' .$key .'=' .'params.'.$key .';';
         }
 
         $params = [
