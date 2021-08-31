@@ -78,6 +78,7 @@ class Elaticsearch
 
     public function upserts($model)
     {
+
         $data = [];
         $str = '';
         foreach ($model->toSearchableArray() as $key => $value){

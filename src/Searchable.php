@@ -7,6 +7,7 @@ trait Searchable
 {
     private $elatic;
 
+
     public static function bootSearchable()
     {
         static::observe(new ModelObserver);
@@ -118,6 +119,7 @@ trait Searchable
 
     public function elaticDelete()
     {
+
         $elatic = new Elaticsearch();
 
         return $elatic->delete($this);
