@@ -1,7 +1,7 @@
 {
     "name": "haode/elaticsearch",
     "description": "",
-    "license": "1.01",
+    "license": "MIT",
     "authors": [
         {
             "name": "zhum",
