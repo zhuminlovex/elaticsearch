@@ -19,3 +19,7 @@ $ composer require haode/elaticsearch
 ``` bash
 use Searchable;
 ```
+## 同步数据库中的数据
+``` bash
+ php artisan elaticsearch:import "App\Models\Orm"
+```
