@@ -42,6 +42,7 @@ If you discover any security related issues, please email 47876800@qq.com instea
 
 ## License
 
+
 1.2. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/haode/elaticsearch.svg?style=flat-square
