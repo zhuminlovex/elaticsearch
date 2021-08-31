@@ -11,7 +11,7 @@ This is where your description should go. Take a look at [contributing.md](contr
 
 Via Composer
 
-``` bash
+``` 
 $ composer require haode/elaticsearch
 ```
 
@@ -55,3 +55,4 @@ If you discover any security related issues, please email 47876800@qq.com instea
 [link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/haode
 [link-contributors]: ../../contributors
+

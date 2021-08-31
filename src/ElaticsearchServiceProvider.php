@@ -2,6 +2,7 @@
 
 namespace Haode\Elaticsearch;
 
+use Haode\Elaticsearch\Console\ImportCommand;
 use Illuminate\Support\ServiceProvider;
 
 class ElaticsearchServiceProvider extends ServiceProvider
@@ -21,6 +22,9 @@ class ElaticsearchServiceProvider extends ServiceProvider
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
+            $this->commands([
+                ImportCommand::class,
+            ]);
         }
     }
 

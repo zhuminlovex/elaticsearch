@@ -12,7 +12,7 @@ class Elaticsearch
     public function __construct()
     {
         $params = array(
-            '127.0.0.1:9200'
+            config('elaticsearch.host').':'.config('elaticsearch.port')
         );
         $this->client = ClientBuilder::create()->setHosts($params)->build();
     }
@@ -25,8 +25,6 @@ class Elaticsearch
      */
     public function createIndex($model)
     {
-        $data = [];
-
         $params = [
             'index' => $model->searchableIndex(),
             'body' => [
@@ -80,14 +78,11 @@ class Elaticsearch
 
     public function upserts($model)
     {
-        $check = $this->exists($model);
-
-        if(!$check){
-            $this->createIndex($model);
-        }
         $data = [];
+        $str = '';
         foreach ($model->toSearchableArray() as $key => $value){
             $data[$key] =  $model->$key ?? '';
+            $str .= 'ctx._source.' .$key .'+=' .'params.'.$key .';';
         }
 
         $params = [
@@ -96,13 +91,12 @@ class Elaticsearch
             'id' => $model->id,
             'body'  => [
                 'script' => [
-                    'source' => 'ctx._source.counter += params.count',
+                    'source' => $str,
                     'params' => $data,
                 ],
                 'upsert' => $data,
             ]
         ];
-
         $response = $this->client->update($params);
         return $response;
     }
