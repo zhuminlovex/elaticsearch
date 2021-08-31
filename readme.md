@@ -11,7 +11,6 @@ This is where your description should go. Take a look at [contributing.md](contr
 
 Via Composer
 
-<<<<<<< HEAD
 ``` 
 $ composer require haode/elaticsearch
 ```
