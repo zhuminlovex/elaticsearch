@@ -40,11 +40,6 @@ If you discover any security related issues, please email 47876800@qq.com instea
 - [zhum][link-author]
 - [All Contributors][link-contributors]
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> c6d57538c43c53b4d31f279678fa4e3416ae6c8d
 ## License
 
 1.2. Please see the [license file](license.md) for more information.
