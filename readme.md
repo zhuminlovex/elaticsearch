@@ -14,4 +14,8 @@ Via Composer
 ``` bash
 $ composer require haode/elaticsearch
 ```
-
+## 搜索查询
+在model 中引用trait
+``` bash
+use Searchable;
+```
